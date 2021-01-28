@@ -5,14 +5,14 @@ import { EventsAppComponent } from './events-app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [
-    EventsAppComponent
-  ],
   imports: [
     BrowserModule,
     NoopAnimationsModule
   ],
-  providers: [],
+  declarations: [
+    EventsAppComponent
+  ],
+  //providers: [], //services
   bootstrap: [EventsAppComponent]
 })
 export class AppModule { }
