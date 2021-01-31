@@ -6,16 +6,22 @@ import { Component } from '@angular/core';
     <div>
       <h1> Upcoming Angular Events </h1>
       <hr/>
+
       <!-- <app-event-thumbnail
         [event]="event1"
         (eventClick)="handleEventClicked($event)"
       ></app-event-thumbnail> -->
-      <app-event-thumbnail
+
+      <!-- <app-event-thumbnail
         #thumbnail
         [event]="event1"
       ></app-event-thumbnail>
-      <h4> {{thumbnail.someProperty}} </h4>
-      <button class="btn btn-primary" (click)="thumbnail.logFoo()" >Log me some foo!</button>
+      <h4> {{thumbnail.someProperty}} </h4> -->
+      <!-- <button class="btn btn-primary" (click)="thumbnail.logFoo()" >Log me some foo!</button> -->
+
+      <app-event-thumbnail
+        [event]="event1"
+      ></app-event-thumbnail>
     </div>
   `
 })
