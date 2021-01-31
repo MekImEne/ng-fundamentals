@@ -19,11 +19,18 @@ import { Component } from '@angular/core';
       <h4> {{thumbnail.someProperty}} </h4> -->
       <!-- <button class="btn btn-primary" (click)="thumbnail.logFoo()" >Log me some foo!</button> -->
 
+      <div class="well">
+        <div>Hello World! 👋</div>
+      </div>
+
       <app-event-thumbnail
         [event]="event1"
       ></app-event-thumbnail>
     </div>
-  `
+  `,
+  styles : [`
+    .well div {color: #bbb;}
+  `]
 })
 
 export class EventsListComponent {
