@@ -13,17 +13,23 @@ import { Component , Input, Output, EventEmitter} from '@angular/core';
         <span>&nbsp;</span>
         <span>{{event.location.city}} , {{event.location.country}} </span>
       </div>
-      <button class="btn btn-primary" (click) = "handleClickMe()" >Click me!</button>
+      <!-- <button class="btn btn-primary" (click) = "handleClickMe()" >Click me!</button> -->
     </div>
   `
 })
 
 export class EventsThumbnailComponent {
   @Input() event: any; // Child pass event variable to other components
-  @Output() eventClick = new EventEmitter();
+  /* @Output() eventClick = new EventEmitter();
 
   handleClickMe() {
     console.log('Clicked !');
     this.eventClick.emit(this.event.name);
+  } */
+
+  someProperty: any = 'test template variable to interact with child component';
+
+  logFoo() {
+    console.log('foo');
   }
 }
