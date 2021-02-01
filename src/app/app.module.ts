@@ -6,6 +6,7 @@ import { EventsListComponent } from './events/events-list.components';
 import { EventsThumbnailComponent } from './events/events-thumbnail.components';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from './nav/navbar.components';
+import { EventService } from './events/shared/event.service';
 
 @NgModule({
   imports: [
@@ -16,9 +17,10 @@ import { NavBarComponent } from './nav/navbar.components';
     EventsAppComponent,
     EventsListComponent,
     EventsThumbnailComponent,
-    NavBarComponent
+    NavBarComponent,
   ],
-  // providers: [], //services
+  // services
+  providers: [EventService],
   bootstrap: [EventsAppComponent]
 })
 export class AppModule { }
