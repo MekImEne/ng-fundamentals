@@ -8,7 +8,14 @@ import { Component , Input, Output, EventEmitter} from '@angular/core';
       <div>Date : {{event?.date}} </div>
       <!-- <div [ngSwitch]="event?.time" [class.green]="event?.time==='8:00 am'"> -->
       <!-- <div [ngSwitch]="event?.time" [ngClass]="{green: event?.time==='8:00 am', bold : event?.time==='8:00 am' }"> -->
-      <div [ngSwitch]="event?.time" [ngClass]="getStartTimeClass()">
+      <!-- <div [ngSwitch]="event?.time" [ngClass]="getStartTimeClass()"> -->
+      <!-- <div
+        [ngSwitch]="event?.time"
+        [ngStyle]="{
+          'color' : event?.time==='8:00 am' ? '#003300' : '#bbb' ,
+          'font-weight' : event?.time==='8:00 am' ? 'bold' : 'normal'}"
+      > -->
+      <div [ngSwitch]="event?.time" [ngStyle]="getStartTimeStyle()">
         Time : {{event?.time}}
         <span *ngSwitchCase="'8:00 am'">(Early start)</span>
         <span *ngSwitchCase="'10:00 am'">(Late Start)</span>
@@ -28,8 +35,8 @@ import { Component , Input, Output, EventEmitter} from '@angular/core';
     .pad-left {margin-left : 10px;}
     .well div {color: #bbb;}
     .thumbnail {min-height : 210px;}
-    .green {color : #003300 !important;}
-    .bold {font-weight : bold;}
+    /* .green {color : #003300 !important;}
+    .bold {font-weight : bold;} */
   `]
 })
 
@@ -48,7 +55,7 @@ export class EventsThumbnailComponent {
     console.log('foo');
   } */
 
-  getStartTimeClass(){
+  /* getStartTimeClass(){
     /* const isEarlyStart = this.event && this.event.time === '8:00 am';
     return {green : isEarlyStart, bold: isEarlyStart}; */
 
@@ -60,8 +67,14 @@ export class EventsThumbnailComponent {
 
     // Or
 
-    if (this.event && this.event.time === '8:00 am')
+    /* if (this.event && this.event.time === '8:00 am')
       return ['green', 'bold'];
     return [];
+  } */
+
+  getStartTimeStyle(): any {
+    if (this.event && this.event.time === '8:00 am')
+      return {color : '#003300', 'font-weight' : 'bold'};
+    return {};
   }
 }
