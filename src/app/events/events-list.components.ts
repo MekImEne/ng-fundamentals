@@ -148,6 +148,7 @@ export class EventsListComponent {
         city: 'Amsterdam',
         country: 'Netherlands'
       },
+      onlineUrl : 'https://www.url.com',
       sessions: [
         {
           id: 1,
