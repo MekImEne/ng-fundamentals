@@ -143,11 +143,11 @@ export class EventsListComponent {
       time: '9:00 am',
       price: 950.00,
       imageUrl: '/assets/images/ng-nl.png',
-      location: {
+      /* location: {
         address: 'The NG-NL Convention Center & Scuba Shop',
         city: 'Amsterdam',
         country: 'Netherlands'
-      },
+      }, */
       onlineUrl : 'https://www.url.com',
       sessions: [
         {
