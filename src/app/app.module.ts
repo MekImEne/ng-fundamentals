@@ -6,12 +6,13 @@ import { EventsListComponent } from './events/events-list.components';
 import { EventsThumbnailComponent } from './events/events-thumbnail.components';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from './nav/navbar.components';
+import { EventDetailsComponent } from './events/event-details/event-details.component';
+import { CreateEventComponent } from './events/create-event.component' ;
+
 import { EventService } from './events/shared/event.service';
 // import { ToastrService } from './common/toastr.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-
-import { EventDetailsComponent } from './events/event-details/event-details.component';
 
 import { appRoutes } from '../routes';
 import { RouterModule } from '@angular/router';
@@ -31,6 +32,7 @@ import { RouterModule } from '@angular/router';
     EventsThumbnailComponent,
     NavBarComponent,
     EventDetailsComponent,
+    CreateEventComponent
   ],
   // services
   providers: [
