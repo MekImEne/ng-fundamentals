@@ -11,6 +11,8 @@ import { EventService } from './events/shared/event.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
+import { EventDetailsComponent } from './events/event-details/event-details.component';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -23,6 +25,7 @@ import { ToastrModule } from 'ngx-toastr';
     EventsListComponent,
     EventsThumbnailComponent,
     NavBarComponent,
+    EventDetailsComponent,
   ],
   // services
   providers: [
