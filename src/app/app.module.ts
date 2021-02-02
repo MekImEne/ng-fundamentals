@@ -13,12 +13,17 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { EventDetailsComponent } from './events/event-details/event-details.component';
 
+import { appRoutes } from '../routes';
+import { RouterModule } from '@angular/router';
+
 @NgModule({
   imports: [
     BrowserModule,
     NoopAnimationsModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot() // ToastrModule added
+    ToastrModule.forRoot(), // ToastrModule added
+
+    RouterModule.forRoot(appRoutes)
   ],
   declarations: [
     EventsAppComponent,
