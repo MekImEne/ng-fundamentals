@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 // import { ToastrService } from '../common/toastr.service';
 
+import {ActivatedRoute} from '@angular/router';
+
 @Component({
   /* selector: 'app-events-list', */
   template : `
@@ -61,11 +63,11 @@ export class EventsListComponent implements OnInit  {
   /* handleEventClicked(data){
     console.log(`recieved event's name : `, data);
   } */
-  events: any[];
-  constructor(private eventService: EventService, private toastr: ToastrService){}
+  events: any;
+  constructor(private eventService: EventService, private toastr: ToastrService, private route: ActivatedRoute){}
 
   ngOnInit(){
-    this.events = this.eventService.getEvents();
+    this.events = this.route.snapshot.data[`events`];
   }
 
   handleThumbnailClick(eventName) {

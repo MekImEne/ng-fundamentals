@@ -18,6 +18,7 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { appRoutes } from '../routes';
 import { RouterModule } from '@angular/router';
+import { EventsListResolver } from './events/events-list-resolver.server';
 
 @NgModule({
   imports: [
@@ -45,7 +46,8 @@ import { RouterModule } from '@angular/router';
     {
       provide : 'canDeactivateCreateEvent',
       useValue: checkDirtyState
-    }
+    },
+    EventsListResolver,
   ],
   bootstrap: [EventsAppComponent]
 })
