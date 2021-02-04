@@ -1,5 +1,5 @@
 import { Component , Input, Output, EventEmitter} from '@angular/core';
-
+import {Ievent} from './shared/event.model';
 @Component({
   selector: 'app-event-thumbnail',
   template : `
@@ -42,7 +42,7 @@ import { Component , Input, Output, EventEmitter} from '@angular/core';
 })
 
 export class EventsThumbnailComponent {
-  @Input() event: any; // Child pass event variable to other components
+  @Input() event: Ievent; // Child pass event variable to other components
   /* @Output() eventClick = new EventEmitter();
 
   handleClickMe() {

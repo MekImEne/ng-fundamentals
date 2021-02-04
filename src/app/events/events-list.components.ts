@@ -2,8 +2,9 @@ import { EventService } from './shared/event.service';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 // import { ToastrService } from '../common/toastr.service';
-
 import {ActivatedRoute} from '@angular/router';
+
+import {Ievent} from './shared/event.model';
 
 @Component({
   /* selector: 'app-events-list', */
@@ -63,7 +64,7 @@ export class EventsListComponent implements OnInit  {
   /* handleEventClicked(data){
     console.log(`recieved event's name : `, data);
   } */
-  events: any;
+  events: Ievent[];
   constructor(private eventService: EventService, private toastr: ToastrService, private route: ActivatedRoute){}
 
   ngOnInit(){
