@@ -15,13 +15,13 @@ export class LoginComponent {
 
     constructor(private authService: AuthService, private router: Router) {}
 
-    login(formValues) {
+    login = (formValues): void => {
         console.log(formValues);
         this.authService.loginUser(formValues.userName, formValues.password);
         this.router.navigate(['events']);
     }
 
-    cancel(){
+    cancel = (): void => {
         this.router.navigate(['events']);
     }
 }

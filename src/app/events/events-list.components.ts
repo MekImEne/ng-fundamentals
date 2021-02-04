@@ -67,11 +67,11 @@ export class EventsListComponent implements OnInit  {
   events: Ievent[];
   constructor(private eventService: EventService, private toastr: ToastrService, private route: ActivatedRoute){}
 
-  ngOnInit(){
+  ngOnInit () {
     this.events = this.route.snapshot.data[`events`];
   }
 
-  handleThumbnailClick(eventName) {
+  handleThumbnailClick = (eventName) => {
     this.toastr.success(eventName);
   }
 }
