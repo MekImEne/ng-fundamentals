@@ -19,6 +19,7 @@ import {
   EventService,
   EventsListResolver
 } from './events/index';
+import { AuthService } from './user/auth.service';
 
 @NgModule({
   imports: [
@@ -42,7 +43,8 @@ import {
   providers: [
     EventService,
     EventRouteActivator,
-    // ToastrService
+    // ToastrService,
+    AuthService,
     {
       provide : 'canDeactivateCreateEvent',
       useValue: checkDirtyState
