@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { EventsAppComponent } from './events-app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 // import { ToastrService } from './common/toastr.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,7 +29,9 @@ import { AuthService } from './user/auth.service';
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
 
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     EventsAppComponent,
@@ -55,8 +58,9 @@ import { AuthService } from './user/auth.service';
 })
 export class AppModule { }
 
-export function checkDirtyState(component: CreateEventComponent) {
-  if(component.isDirty)
+export function checkDirtyState (component: CreateEventComponent) {
+  if (component.isDirty) {
     return window.confirm('You have not save this event ! Do you really want to cancel ?');
+  }
   return true;
 }

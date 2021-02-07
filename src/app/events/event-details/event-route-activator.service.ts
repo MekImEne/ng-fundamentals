@@ -6,11 +6,11 @@ import { Injectable } from '@angular/core';
 export class EventRouteActivator implements CanActivate {
   constructor(private eventSerive: EventService, private router: Router) {}
 
-  canActivate(route: ActivatedRouteSnapshot) {
-    const eventExist = !!this.eventSerive.getEvent(+route.params['id']);
-    if (!eventExist)
+  canActivate = (route: ActivatedRouteSnapshot) => {
+    const eventExist = !!this.eventSerive.getEvent(+route.params[`id`]);
+    if (!eventExist) {
       this.router.navigate(['/404']);
-
+    }
     return eventExist;
   }
 }
