@@ -15,9 +15,25 @@ import { EventService } from './shared';
 })
 
 export class CreateEventComponent  {
-  newEvent;
+  event: any;
   isDirty = true;
   constructor(private router: Router, private eventService: EventService){}
+
+  ngOnInit () {
+    this.event = {
+      name : 'Ng Spectacular',
+      date : '03/02/2022',
+      time : '10 am',
+      price : 799.88,
+      location : {
+        address : '300 log DNC',
+        city : 'Alger',
+        country : 'Algeria',
+      },
+      onlineUrl : 'http://ngSpectacular.com',
+      imageUrl : 'http://ngSpectacular.com/logo.png'
+    };
+  }
 
   saveEvent = (formValues) => {
     console.log(formValues);
