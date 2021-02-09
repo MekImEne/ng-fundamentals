@@ -9,19 +9,19 @@ import {AuthService} from './auth.service';
   `],
 })
 export class LoginComponent {
-    username: string;
-    password: string;
-    mouseoverLogin: boolean;
+  username: string;
+  password: string;
+  mouseoverLogin: boolean;
 
-    constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
-    login = (formValues): void => {
-        console.log(formValues);
-        this.authService.loginUser(formValues.userName, formValues.password);
-        this.router.navigate(['events']);
-    }
+  login = (formValues): void => {
+    console.log(formValues);
+    this.authService.loginUser(formValues.userName, formValues.password);
+    this.router.navigate(['events']);
+  }
 
-    cancel = (): void => {
-        this.router.navigate(['events']);
-    }
+  cancel = (): void => {
+    this.router.navigate(['events']);
+  }
 }
