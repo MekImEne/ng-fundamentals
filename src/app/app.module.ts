@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from '../routes';
 import { NavBarComponent } from './nav/navbar.components';
 import {Error404Component} from './errors/404.components';
+import { CollapsibleWellComponent } from './common/collapsible-well';
 
 import {
   EventsListComponent,
@@ -44,7 +45,8 @@ import { AuthService } from './user/auth.service';
     CreateEventComponent,
     Error404Component,
     CreateSessionComponent,
-    SessionListComponent
+    SessionListComponent,
+    CollapsibleWellComponent
   ],
   // services
   providers: [
