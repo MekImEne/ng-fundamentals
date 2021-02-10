@@ -5,6 +5,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 // import { ToastrService } from './common/toastr.service';
+import {TOASTR_TOKEN, Toastr} from './common/toastr.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from '../routes';
@@ -25,6 +26,8 @@ import {
   DurationPipe
 } from './events/index';
 import { AuthService } from './user/auth.service';
+
+let toastr: Toastr;
 
 @NgModule({
   imports: [
@@ -55,6 +58,10 @@ import { AuthService } from './user/auth.service';
     EventService,
     EventRouteActivator,
     // ToastrService,
+    {
+      provide : TOASTR_TOKEN,
+      useValue: toastr
+    },
     AuthService,
     {
       provide : 'canDeactivateCreateEvent',
