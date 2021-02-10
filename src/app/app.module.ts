@@ -56,7 +56,8 @@ let toastr: Toastr;
   // services
   providers: [
     EventService,
-    EventRouteActivator,
+    //{ provide : EventRouteActivator, useClass: EventRouteActivator },
+    { provide : EventRouteActivator, useClass: EventRouteActivator },
     // ToastrService,
     {
       provide : TOASTR_TOKEN,
