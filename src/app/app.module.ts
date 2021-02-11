@@ -1,3 +1,4 @@
+/* tslint:disable:no-string-literal */
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { EventsAppComponent } from './events-app.component';
@@ -5,13 +6,18 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 // import { ToastrService } from './common/toastr.service';
-import {TOASTR_TOKEN, Toastr} from './common/toastr.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from '../routes';
 import { NavBarComponent } from './nav/navbar.components';
 import {Error404Component} from './errors/404.components';
-import { CollapsibleWellComponent } from './common/collapsible-well';
+
+import {
+  CollapsibleWellComponent,
+  TOASTR_TOKEN,
+  Toastr,
+  JQ_TOKEN
+} from './common/index';
 
 import {
   EventsListComponent,
@@ -27,8 +33,8 @@ import {
 } from './events/index';
 import { AuthService } from './user/auth.service';
 
-let toastr: Toastr;
-
+let toastr: Toastr = window['toastr'];
+let jQuery = window['$'];
 @NgModule({
   imports: [
     BrowserModule,
@@ -56,7 +62,7 @@ let toastr: Toastr;
   // services
   providers: [
     EventService,
-    //{ provide : EventRouteActivator, useClass: EventRouteActivator },
+    // { provide : EventRouteActivator, useClass: EventRouteActivator },
     { provide : EventRouteActivator, useClass: EventRouteActivator },
     // ToastrService,
     {
@@ -80,3 +86,4 @@ export function checkDirtyState (component: CreateEventComponent) {
   }
   return true;
 }
+/* tslint:enable:no-string-literal */
