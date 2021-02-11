@@ -15,7 +15,7 @@ import { Component, Input } from '@angular/core';
                         </h4>
                     </div>
                     <div class="modal-body">
-                        <<ng-content></ng-content>
+                        <ng-content></ng-content>
                     </div>
                 </div>
             </div>
