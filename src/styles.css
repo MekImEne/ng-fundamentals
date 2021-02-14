@@ -1,9 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import '~ngx-toastr/toastr.css';
+@import "~bootstrap/dist/css/bootstrap.css";
 
-.hoverwell:hover {
-    background-color: #485563;
+  .hoverwell {
+    background-color: #485563 !important;
+    cursor: pointer;
+  }
+  .hoverwell:hover {
+    background-color: #485563 !important;
     cursor: pointer;
   }
 
@@ -36,7 +41,7 @@
     background-color: #f89406;
   }
 
-  /* h2{
-    color: green;
+  h2{
+    color: white;
   }
- */
+

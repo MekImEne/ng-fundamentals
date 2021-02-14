@@ -31,7 +31,8 @@ import {
   EventsListResolver,
   CreateSessionComponent,
   SessionListComponent,
-  DurationPipe
+  DurationPipe,
+  UpvoteComponent
 } from './events/index';
 import { AuthService } from './user/auth.service';
 
@@ -61,7 +62,8 @@ let jQuery = window['$'];
     CollapsibleWellComponent,
     DurationPipe,
     SimpleModalComponent,
-    ModalTriggerDirective
+    ModalTriggerDirective,
+    UpvoteComponent
   ],
   // services
   providers: [
