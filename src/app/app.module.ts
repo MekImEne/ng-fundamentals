@@ -8,10 +8,11 @@ import { ToastrModule } from 'ngx-toastr';
 // import { ToastrService } from './common/toastr.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
+
 import { appRoutes } from '../routes';
 import { NavBarComponent } from './nav/navbar.components';
 import {Error404Component} from './errors/404.components';
-import {HttpClientModule} from './common/http';
 import {
   CollapsibleWellComponent,
   TOASTR_TOKEN,
