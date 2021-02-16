@@ -2,18 +2,20 @@ import { Error404Component } from './app/errors/404.components';
 import {Routes} from '@angular/router';
 
 import {
-  EventRouteActivator,
+  // EventRouteActivator,
   CreateEventComponent,
   EventDetailsComponent,
   EventsListComponent,
   EventsListResolver,
-  CreateSessionComponent
+  CreateSessionComponent,
+  EventResolver
 } from './app/events/index';
 
 export const appRoutes: Routes = [
   {path : 'events/new', component: CreateEventComponent, canDeactivate: ['canDeactivateCreateEvent']},
   {path : 'events' , component : EventsListComponent, resolve: {events: EventsListResolver}},
-  {path : 'events/:id', component : EventDetailsComponent , canActivate: [EventRouteActivator]},
+  // {path : 'events/:id', component : EventDetailsComponent , canActivate: [EventRouteActivator]},
+  {path : 'events/:id', component : EventDetailsComponent , resolve: {event: EventResolver}},
   {path : 'events/session/new' , component: CreateSessionComponent},
   {path : '404', component: Error404Component},
   {path : '' , redirectTo : '/events' , pathMatch : 'full'},

@@ -20,9 +20,9 @@ export class EventDetailsComponent implements OnInit {
   sortBy = 'votes';
   constructor(private eventService: EventService, private route: ActivatedRoute){}
   ngOnInit() {
-    this.route.params.forEach((params: Params) => {
-      this.event = this.eventService.getEvent(+params[`id`]);
-      this.addMode = false;
+    this.route.data.forEach(data => {
+        this.event = data[`event`];
+        this.addMode = false;
     });
     // this.event = this.eventService.getEvent(+this.route.snapshot.params[`id`]);
   }

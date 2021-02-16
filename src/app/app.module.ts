@@ -27,7 +27,7 @@ import {
   EventsThumbnailComponent,
   EventDetailsComponent,
   CreateEventComponent,
-  EventRouteActivator,
+  // EventRouteActivator,
   EventService,
   EventsListResolver,
   CreateSessionComponent,
@@ -35,7 +35,8 @@ import {
   DurationPipe,
   UpvoteComponent,
   VoterService,
-  LocationValidator
+  LocationValidator,
+  EventResolver
 } from './events/index';
 import { AuthService } from './user/auth.service';
 
@@ -74,8 +75,9 @@ let jQuery = window['$'];
   providers: [
     EventService,
     // { provide : EventRouteActivator, useClass: EventRouteActivator },
-    { provide : EventRouteActivator, useClass: EventRouteActivator },
+    // { provide : EventRouteActivator, useClass: EventRouteActivator },
     // ToastrService,
+    EventResolver,
     {
       provide : TOASTR_TOKEN,
       useValue: toastr
