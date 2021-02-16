@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from '../routes';
 import { NavBarComponent } from './nav/navbar.components';
 import {Error404Component} from './errors/404.components';
-
+import {HttpClientModule} from './common/http';
 import {
   CollapsibleWellComponent,
   TOASTR_TOKEN,
@@ -49,7 +49,8 @@ let jQuery = window['$'];
 
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   declarations: [
     EventsAppComponent,
