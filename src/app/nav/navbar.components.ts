@@ -22,8 +22,6 @@ export class NavBarComponent {
     private eventService: EventService,
   ) {}
 
-  // tslint:disable-next-line:typedef
-  // tslint:disable-next-line:use-lifecycle-interface
   ngOnInit() {
     this.eventService.getEvents().subscribe((data) => {
       this.events = data;

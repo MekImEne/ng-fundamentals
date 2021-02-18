@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 // import { ToastrService } from './common/toastr.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
+import { PreloadAllModules, RouterModule } from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 
 import { appRoutes } from '../routes';
@@ -49,7 +49,7 @@ const jQuery = window['$'];
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
 
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, {preloadingStrategy: PreloadAllModules}),
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
