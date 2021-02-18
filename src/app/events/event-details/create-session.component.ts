@@ -27,6 +27,7 @@ export class CreateSessionComponent implements OnInit {
     level: FormControl;
     abstract: FormControl;
 
+    // tslint:disable-next-line:typedef
     ngOnInit() {
         this.name = new FormControl('', Validators.required);
         this.presenter = new FormControl('', Validators.required);
@@ -63,6 +64,7 @@ export class CreateSessionComponent implements OnInit {
         this.saveNewSession.emit(session);
     }
 
+    // tslint:disable-next-line:typedef
     cancel(){
         this.cancelAddSession.emit();
     }

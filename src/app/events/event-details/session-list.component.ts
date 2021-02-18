@@ -17,6 +17,7 @@ export class SessionListComponent implements OnChanges {
 
   constructor(private auth: AuthService, private voterService: VoterService ) {}
 
+  // tslint:disable-next-line:typedef
   ngOnChanges() {
     if (this.sessions){
       this.filterSessions(this.filterBy);
@@ -36,7 +37,7 @@ export class SessionListComponent implements OnChanges {
   }
 
   toggleVote = (session: ISession) => {
-    if(this.userHasVoted(session)){
+    if (this.userHasVoted(session)){
       this.voterService.deleteVoter(this.eventId, session, this.auth.currentUser.userName);
     } else {
       this.voterService.addVoter(this.eventId, session, this.auth.currentUser.userName);
@@ -53,12 +54,14 @@ export class SessionListComponent implements OnChanges {
 }
 
 
+// tslint:disable-next-line:typedef
 function sortByNameAsc(s1: ISession, s2: ISession) {
   if (s1.name > s2.name) {return 1; }
   else if (s1.name === s2.name) {return 0; }
   else {return -1; }
 }
 
+// tslint:disable-next-line:typedef
 function sortByVotesDesc(s1: ISession, s2: ISession) {
   return s2.voters.length - s1.voters.length;
 }

@@ -67,7 +67,8 @@ export class EventsListComponent implements OnInit  {
   events: Ievent[];
   constructor(private eventService: EventService, private toastr: ToastrService, private route: ActivatedRoute){}
 
-  ngOnInit () {
+  // tslint:disable-next-line:typedef
+  ngOnInit() {
     this.events = this.route.snapshot.data[`events`];
   }
 

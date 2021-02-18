@@ -14,6 +14,8 @@ export class EventsAppComponent {
   /* title = 'ng-fundamentals'; */
   constructor(private auth: AuthService) {}
 
+  // tslint:disable-next-line:typedef
+  // tslint:disable-next-line:use-lifecycle-interface
   ngOnInit() {
     this.auth.checkAuthenticationStatus();
   }

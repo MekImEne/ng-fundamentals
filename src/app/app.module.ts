@@ -40,8 +40,8 @@ import {
 } from './events/index';
 import { AuthService } from './user/auth.service';
 
-let toastr: Toastr = window['toastr'];
-let jQuery = window['$'];
+const toastr: Toastr = window['toastr'];
+const jQuery = window['$'];
 @NgModule({
   imports: [
     BrowserModule,
@@ -98,7 +98,8 @@ let jQuery = window['$'];
 })
 export class AppModule { }
 
-export function checkDirtyState (component: CreateEventComponent) {
+// tslint:disable-next-line:typedef
+export function checkDirtyState(component: CreateEventComponent) {
   if (component.isDirty) {
     return window.confirm('You have not save this event ! Do you really want to cancel ?');
   }

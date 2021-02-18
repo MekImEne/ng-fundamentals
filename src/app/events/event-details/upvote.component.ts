@@ -15,7 +15,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
             </div>
         </div>
     `,
-    styleUrls: [`/upvote.component.css`],
+    styleUrls: ['./upvote.component.css'],
 })
 
 export class UpvoteComponent {

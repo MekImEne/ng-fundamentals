@@ -2,8 +2,6 @@ import { Component, Input } from '@angular/core';
 import { EventService, ISession } from '../events';
 import {AuthService} from '../user/auth.service';
 import {Ievent} from '../events/shared/event.model';
-import {ActivatedRoute} from '@angular/router';
-
 @Component({
   selector: 'app-nav-bar',
   templateUrl : `./navbar.components.html`,
@@ -24,12 +22,15 @@ export class NavBarComponent {
     private eventService: EventService,
   ) {}
 
-  ngOnInit () {
+  // tslint:disable-next-line:typedef
+  // tslint:disable-next-line:use-lifecycle-interface
+  ngOnInit() {
     this.eventService.getEvents().subscribe((data) => {
       this.events = data;
    });
   }
 
+  // tslint:disable-next-line:typedef
   searchSessions(searchTerm){
     this.eventService.searchSessions(searchTerm).subscribe(sessions => {
       this.foundSession = sessions;

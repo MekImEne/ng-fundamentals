@@ -18,7 +18,7 @@ export class VoterService {
 
     addVoter = (eventId: number, session: ISession, voterName: string) => {
         session.voters.push(voterName);
-        let options = {headers: new HttpHeaders({'Content-type': 'application/json'})};
+        const options = {headers: new HttpHeaders({'Content-type': 'application/json'})};
         const url = `/api/events/${eventId}/sessions/${session.id}/voters/${voterName}`;
         this.http.post(url, {}, options)
         .pipe(catchError(this.handleError('addVoter')))
@@ -29,6 +29,7 @@ export class VoterService {
         return session.voters.some(voter => voter === voterName);
     }
 
+    // tslint:disable-next-line:typedef
     private handleError<T>(operation= 'operation', result?: T) {
         return (error: any): Observable<T> => {
           console.error(error);

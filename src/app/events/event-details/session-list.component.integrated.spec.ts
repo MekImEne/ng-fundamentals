@@ -1,4 +1,4 @@
-import {TestBed, async, ComponentFixture} from '@angular/core/testing';
+import {TestBed, waitForAsync, ComponentFixture} from '@angular/core/testing';
 import {DebugElement, Component, NO_ERRORS_SCHEMA} from '@angular/core';
 import {SessionListComponent} from './session-list.component';
 // import { UpvoteComponent } from './upvote.component';
@@ -21,12 +21,12 @@ describe('SessionListComponent', () => {
     let element: HTMLElement;
     let debugEl: DebugElement;
 
-    beforeEach(async(() => {
-        let mockAuthService = {
+    beforeEach(waitForAsync(() => {
+        const mockAuthService = {
             isAuthenticated: () => true,
             currentUser: {userName: 'Joe'}
         };
-        let mockVoterService = {
+        const mockVoterService = {
             userHasVoted: () => true
         };
 

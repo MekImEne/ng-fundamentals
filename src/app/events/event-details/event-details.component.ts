@@ -19,6 +19,7 @@ export class EventDetailsComponent implements OnInit {
   filterBy = 'all';
   sortBy = 'votes';
   constructor(private eventService: EventService, private route: ActivatedRoute){}
+  // tslint:disable-next-line:typedef
   ngOnInit() {
     this.route.data.forEach(data => {
         this.event = data[`event`];

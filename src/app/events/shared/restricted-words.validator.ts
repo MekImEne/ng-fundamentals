@@ -1,15 +1,16 @@
 import { FormControl } from '@angular/forms';
 
-export function restrictedWords (words) {
+// tslint:disable-next-line:typedef
+export function restrictedWords(words) {
     return (control: FormControl): {[key: string]: any} => {
         if (!words) { return null; }
 
-        let invalidwords = words
+        const invalidwords = words
         .map(w => control.value.includes(w) ? w : null )
         .filter(w => w != null);
 
         return invalidwords && invalidwords.length > 0
-        ? {'restrictedWords': invalidwords.join(', ')}
+        ? {restrictedWords: invalidwords.join(', ')}
         : null;
     };
 }

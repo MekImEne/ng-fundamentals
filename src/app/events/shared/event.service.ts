@@ -22,8 +22,9 @@ export class EventService {
     ));
   }
 
+  // tslint:disable-next-line:typedef
   saveEvent(event) {
-    let options = {headers: new HttpHeaders({'Content-type': 'application/json'})};
+    const options = {headers: new HttpHeaders({'Content-type': 'application/json'})};
     return this.http.post<Ievent>('/api/events', event, options).pipe(catchError(
       this.handleError<Ievent>('saveEvent')
     ));
@@ -36,6 +37,7 @@ export class EventService {
     ));
   }
 
+  // tslint:disable-next-line:typedef
   private handleError<T>(operation= 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);

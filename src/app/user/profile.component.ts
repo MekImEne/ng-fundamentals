@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Toastr, TOASTR_TOKEN } from '../common/toastr.service';
+// import { Toastr, TOASTR_TOKEN } from '../common/toastr.service';
 import { AuthService } from './auth.service';
 
 @Component({
@@ -28,6 +28,7 @@ export class ProfileComponent implements OnInit {
     private toastr: ToastrService
     ) {}
 
+  // tslint:disable-next-line:typedef
   ngOnInit() {
     this.firstName = new FormControl(
       this.authService.currentUser.firstName,
@@ -43,7 +44,8 @@ export class ProfileComponent implements OnInit {
     });
   }
 
-  saveProfile (formValues) {
+  // tslint:disable-next-line:typedef
+  saveProfile(formValues) {
     console.log(formValues);
     if (this.profileForm.valid){
       this.authService.updateCurrentUser(formValues.firstName, formValues.lastName)
@@ -67,6 +69,7 @@ export class ProfileComponent implements OnInit {
     return this.firstName.valid || this.firstName.untouched;
   }
 
+  // tslint:disable-next-line:typedef
   logout() {
     this.authService.logout().subscribe(() => {
       this.router.navigate([`/user/login`]);
