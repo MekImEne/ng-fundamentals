@@ -1,7 +1,7 @@
 import {TestBed, async, ComponentFixture} from '@angular/core/testing';
-import {DebugElement} from '@angular/core';
+import {DebugElement, Component, NO_ERRORS_SCHEMA} from '@angular/core';
 import {SessionListComponent} from './session-list.component';
-import { UpvoteComponent } from './upvote.component';
+// import { UpvoteComponent } from './upvote.component';
 
 import {VoterService} from './voter.service';
 import {AuthService} from '../../user/auth.service';
@@ -9,6 +9,11 @@ import {ISession} from '../shared/event.model';
 import {By} from '@angular/platform-browser';
 import { DurationPipe } from '../shared';
 import { CollapsibleWellComponent } from 'src/app/common';
+
+@Component({})
+class UpvoteComponent {
+
+}
 
 describe('SessionListComponent', () => {
     let fixture: ComponentFixture<SessionListComponent>;
@@ -29,15 +34,17 @@ describe('SessionListComponent', () => {
             imports: [],
             declarations: [
                 SessionListComponent,
-                UpvoteComponent,
+                // UpvoteComponent,
                 DurationPipe,
-                CollapsibleWellComponent
+                // CollapsibleWellComponent
             ],
             providers: [
                 {provide: AuthService, useValue: mockAuthService},
                 {provide: VoterService, useValue: mockVoterService},
             ],
-            schemas: [],
+            schemas: [
+                NO_ERRORS_SCHEMA
+            ],
         });
     }));
 
@@ -49,7 +56,7 @@ describe('SessionListComponent', () => {
     });
 
     describe('Initial display', () => {
-        it('Should have the correct session title', () => {
+        it('Should have the correct initial display', () => {
             component.sessions = [{
                 id: 3,
                 name: 'Session 1',
